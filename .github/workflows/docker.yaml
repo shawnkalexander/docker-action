@@ -8,11 +8,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: pull image
-        run: docker pull ghcr.io/open-webui/open-webui:main
+        run: docker pull ghcr.io/open-webui/open-webui:ollama
       - run: docker image list
-      - run: docker save -o ./webuiimage ghcr.io/open-webui/open-webui:main
+      - run: docker save -o ./webuillamaimage ghcr.io/open-webui/open-webui:ollama
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
           name: Upload Docker Image
-          path: ./webuiimage
+          path: ./webuillamaimage
