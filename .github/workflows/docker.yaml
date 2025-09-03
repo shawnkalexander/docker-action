@@ -8,11 +8,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: pull image
-        run: docker pull ghcr.io/open-webui/open-webui:ollama
+        run: docker pull quay.io/minio/minio
       - run: docker image list
-      - run: docker save -o ./webuillamaimage ghcr.io/open-webui/open-webui:ollama
+      - run: docker save -o ./minio quay.io/minio/minio
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
           name: Upload Docker Image
-          path: ./webuillamaimage
+          path: ./minio
