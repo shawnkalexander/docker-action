@@ -8,11 +8,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: pull image
-        run: docker pull jgraph/drawio
+        run: docker pull inventree/inventree
       - run: docker image list
-      - run: docker save -o ./drawio jgraph/drawio
+      - run: docker save -o ./inventree inventree/inventree
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
           name: Upload Docker Image
-          path: ./drawio
+          path: ./inventree
