@@ -8,11 +8,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: pull image
-        run: docker pull redis:7-alpine
+        run: docker pull caddy:alpine
       - run: docker image list
-      - run: docker save -o ./redis redis:7-alpine
+      - run: docker save -o ./caddy caddy:alpine
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
           name: Upload Docker Image
-          path: ./redis
+          path: ./caddy
