@@ -8,11 +8,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: pull image
-        run: docker pull postgres:17
+        run: docker pull redis:7-alpine
       - run: docker image list
-      - run: docker save -o ./postgres postgres:17
+      - run: docker save -o ./redis redis:7-alpine
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
           name: Upload Docker Image
-          path: ./postgres
+          path: ./redis
