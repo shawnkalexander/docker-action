@@ -10,7 +10,7 @@ jobs:
       - name: pull image
         run: docker pull ghcr.io/open-webui/open-webui:main
       - run: docker image list
-      - run: docker save -o ./webui qghcr.io/open-webui/open-webui:main
+      - run: docker save -o ./webui ghcr.io/open-webui/open-webui:main
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
