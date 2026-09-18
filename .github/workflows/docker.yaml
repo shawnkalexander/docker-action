@@ -8,11 +8,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: pull image
-        run: docker pull ghcr.io/open-webui/open-webui:main
+        run: docker pull python:alpine3.24
       - run: docker image list
-      - run: docker save -o ./webui ghcr.io/open-webui/open-webui:main
+      - run: docker save -o ./python python:alpine3.24
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
           name: Upload Docker Image
-          path: ./webui
+          path: ./python
