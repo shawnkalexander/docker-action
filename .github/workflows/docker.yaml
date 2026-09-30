@@ -8,11 +8,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: pull image
-        run: docker pull python:alpine3.24
+        run: docker pull inventree:stable
       - run: docker image list
-      - run: docker save -o ./python python:alpine3.24
+      - run: docker save -o ./inventree inventree:stable
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
           name: Upload Docker Image
-          path: ./python
+          path: ./inventree
