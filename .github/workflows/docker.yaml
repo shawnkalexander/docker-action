@@ -8,9 +8,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: pull image
-        run: docker pull splunk/splunk
+        run: docker pull splunk/splunk:10.6.1
       - run: docker image list
-      - run: docker save -o ./splunk splunk/splunk
+      - run: docker save -o ./splunk splunk/splunk:10.6.1
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
